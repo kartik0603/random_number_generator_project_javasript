@@ -4,9 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #animation {
+            position: relative;
+            width: 100vw;
+            height: 100%;
+            border: 15px;
+            object-fit: cover;
+        }
+        body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        #result {
+            position: absolute;
+            top: 0px;
+            left: 350px;
+            z-index: 1000;
+            color: red;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            letter-spacing: 5px;
+            font-size: 250px;
+            text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.8);
+        }
+        #submit {
+            position: absolute;
+            top: 230px;
+            left: 500px;
+            z-index: 1000;
+        }
+        #submitText{
+            position: absolute;
+            top: 220px;
+            left: 590px;
+            z-index: 1000;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            letter-spacing: 2px;
+            font-size: 20px;
+            text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.8);
+        }
+        #angrybird{
+
+            position: absolute;
+            top: 30px;
+            left: 5px;
+            z-index: 1000;
+            width: 450px;
+            height: 550px;
+
+        }
+    </style>
 </head>
 <body>
-    
+    <img id="animation" src="pexels-skitterphoto-705171.jpg" alt="">
+    <!-- <img id="angrybird" src="Abdiceicon (1).png" alt=""> -->
+    <input id="submit" type="image" src="pngtree-cute-bird-3d-illustration-png-image_11591462.png" alt="Roll Dice" >
+    <p id="submitText">Click Me To <br> Roll Dice </p>
+    <p id="result"></p>
+
+    <script>
+        const getRandomNumber = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        };
+
+        document.getElementById("submit").addEventListener("click", function () {
+            let result = getRandomNumber(1, 6);
+            document.getElementById("result").innerHTML = result;
+        });
+    </script>
 </body>
-<script src="index.js"></script>
 </html>
